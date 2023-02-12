@@ -40,3 +40,7 @@
   color: #888;
 }
 
+.hero {
+  background-image: "/src/assets/gluten free.jpg";
+  opacity: 0.75;
+}
