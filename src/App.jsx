@@ -1,20 +1,26 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
-import Item from "./components/Item";
+import ItemDetailContainer from "./components/ItemDetailContainer";
 import ItemListContainer from "./components/ItemListContainer";
-import ImageBack from "./components/ImageBack";
+import Cart from "./components/Cart";
+
 
 
 const App = () => {
   return (
     <BrowserRouter>
       <NavBar/>
-      <ImageBack/>
 
       <Routes>
-        <Route exact path="/ItemListContainer" element={<ItemListContainer />} />
-        <Route exact path="/Item" element = {<Item/> }/> {/*solo para visualizar, despues se mueve a ItemList*/}
-        
+
+      <Route exact path="/catalogue" element={<ItemListContainer />} />
+          <Route
+            exact
+            path="/category/:category"
+            element={<ItemListContainer />}
+          />
+        <Route exact path="/item/:id" element={<ItemDetailContainer />} />
+        <Route exact path="/cart" element={<Cart />} /> 
       </Routes>
     </BrowserRouter>
   );
